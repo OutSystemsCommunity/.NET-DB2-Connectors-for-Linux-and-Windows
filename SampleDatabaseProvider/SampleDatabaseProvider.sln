@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleDatabaseProvider", "SampleDatabaseProvider.csproj", "{2D8DE026-833E-4E5F-9C7A-F48483E36985}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseAbstractionLayer", "..\Projects\DatabaseAbstractionLayer\DatabaseAbstractionLayer.csproj", "{E451FEC9-2B6B-45A2-8AB9-57196F4557E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseProvider.Tests", "..\Projects\DatabaseProvider.Tests\IntegrationDatabaseProvider.Tests.csproj", "{AC3960B5-7709-4169-B3F4-BCA7289BAE0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D8DE026-833E-4E5F-9C7A-F48483E36985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D8DE026-833E-4E5F-9C7A-F48483E36985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D8DE026-833E-4E5F-9C7A-F48483E36985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D8DE026-833E-4E5F-9C7A-F48483E36985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E451FEC9-2B6B-45A2-8AB9-57196F4557E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E451FEC9-2B6B-45A2-8AB9-57196F4557E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E451FEC9-2B6B-45A2-8AB9-57196F4557E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E451FEC9-2B6B-45A2-8AB9-57196F4557E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC3960B5-7709-4169-B3F4-BCA7289BAE0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC3960B5-7709-4169-B3F4-BCA7289BAE0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC3960B5-7709-4169-B3F4-BCA7289BAE0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC3960B5-7709-4169-B3F4-BCA7289BAE0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

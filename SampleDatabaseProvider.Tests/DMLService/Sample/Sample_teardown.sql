@@ -1,0 +1,2 @@
+DROP TABLE DUMMY%Machine%
+DROP TABLE PERSON%Machine%

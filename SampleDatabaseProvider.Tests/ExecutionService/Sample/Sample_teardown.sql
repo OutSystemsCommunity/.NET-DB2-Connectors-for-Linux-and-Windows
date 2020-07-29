@@ -1,0 +1,2 @@
+DROP TABLE DUMMY%Machine%
+DROP TABLE BIG_DATA%Machine%

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4249E72-A4EE-40C9-BBC3-F7BA2B225B49}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OutSystems.HubEdition.DatabaseProvider.DB2LUW</RootNamespace>
+    <AssemblyName>OutSystems.HubEdition.DB2LUWDatabaseProvider</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Libraries\plugins\database\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Libraries\plugins\database\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IBM.Data.DB2, Version=9.7.4.4, Culture=neutral, PublicKeyToken=7c307b91aa13d208, processorArchitecture=AMD64">
+      <HintPath>packages\IBM.Data.DB.Provider.11.1.3030.4\lib\net451\x64\IBM.Data.DB2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OutSystems.RuntimeCommon, Version=9.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\OutSystemsLibraries\OutSystems.RuntimeCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Projects\DatabaseAbstractionLayer\Properties\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="ConfigurationService\DB2LUWDatabaseConfiguration.cs" />
+    <Compile Include="ConfigurationService\DB2LUWIDs.cs" />
+    <Compile Include="ConfigurationService\DB2LUWRuntimeDatabaseConfiguration.cs" />
+    <Compile Include="DatabaseObjects\DB2LUWDatabaseInfo.cs" />
+    <Compile Include="DatabaseObjects\DB2LUWDataTypeInfo.cs" />
+    <Compile Include="DatabaseObjects\DB2LUWDatabaseObjectFactory.cs" />
+    <Compile Include="DatabaseObjects\DB2LUWTableSourceColumnInfo.cs" />
+    <Compile Include="DatabaseObjects\DB2LUWTableSourceForeignKeyInfo.cs" />
+    <Compile Include="DatabaseObjects\DB2LUWTableSourceInfo.cs" />
+    <Compile Include="DMLService\DB2LUWDMLAggregateFunctions.cs" />
+    <Compile Include="DMLService\DB2LUWDMLDefaultValues.cs" />
+    <Compile Include="DMLService\DB2LUWDMLEntityActions.cs" />
+    <Compile Include="DMLService\DB2LUWDMLFunctions.cs" />
+    <Compile Include="DMLService\DB2LUWDMLIdentifiers.cs" />
+    <Compile Include="DMLService\DB2LUWDMLOperators.cs" />
+    <Compile Include="DMLService\DB2LUWDMLQueries.cs" />
+    <Compile Include="DMLService\DB2LUWDMLService.cs" />
+    <Compile Include="DMLService\DB2LUWDMLSyntaxHighlightDefinitions.cs" />
+    <Compile Include="ExecutionService\DB2LUWExecutionService.cs" />
+    <Compile Include="ExecutionService\ParametersHandler.cs" />
+    <Compile Include="Extensions\DecimalExtensions.cs" />
+    <Compile Include="Extensions\IDbCommandExtensions.cs" />
+    <Compile Include="Extensions\StringBuilderExtensions.cs" />
+    <Compile Include="IntrospectionService\DB2LUWIntrospectionService.cs" />
+    <Compile Include="TransactionService\DB2LUWTransactionService.cs" />
+    <Compile Include="DB2LUWIntegrationDatabaseProvider.cs" />
+    <Compile Include="DB2LUWIntegrationDatabaseService.cs" />
+    <Compile Include="DB2LUWProviderProperties.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Projects\DatabaseAbstractionLayer\DatabaseAbstractionLayer.csproj">
+      <Project>{e451fec9-2b6b-45a2-8ab9-57196f4557e8}</Project>
+      <Name>DatabaseAbstractionLayer</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\IBM.Data.DB2.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(ProjectDir)..\DB2LUWDatabaseProvider.Tests\DB2LUWDatabaseProvider.Tests.config" "$(ProjectDir)..\Libraries\"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="packages\IBM.Data.DB.Provider.11.1.3030.4\build\IBM.Data.DB.Provider.targets" Condition="Exists('packages\IBM.Data.DB.Provider.11.1.3030.4\build\IBM.Data.DB.Provider.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\IBM.Data.DB.Provider.11.1.3030.4\build\IBM.Data.DB.Provider.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\IBM.Data.DB.Provider.11.1.3030.4\build\IBM.Data.DB.Provider.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

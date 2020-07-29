@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D8DE026-833E-4E5F-9C7A-F48483E36985}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SampleDatabaseProvider</RootNamespace>
+    <AssemblyName>SampleDatabaseProvider</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Libraries\plugins\database\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Libraries\plugins\database\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OutSystems.RuntimeCommon, Version=9.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\OutSystemsLibraries\OutSystems.RuntimeCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\DatabaseConfiguration.cs" />
+    <Compile Include="Configuration\RuntimeDatabaseConfiguration.cs" />
+    <Compile Include="DatabaseProvider.cs" />
+    <Compile Include="DML\DMLAggregateFunctions.cs" />
+    <Compile Include="DML\DMLDefaultValues.cs" />
+    <Compile Include="DML\DMLEntityActions.cs" />
+    <Compile Include="DML\DMLFunctions.cs" />
+    <Compile Include="DML\DMLIdentifiers.cs" />
+    <Compile Include="DML\DMLOperators.cs" />
+    <Compile Include="DML\DMLQueries.cs" />
+    <Compile Include="DML\DMLService.cs" />
+    <Compile Include="Execution\ExecutionService.cs" />
+    <Compile Include="Introspection\DatabaseInfo.cs" />
+    <Compile Include="Introspection\DatabaseObjectFactory.cs" />
+    <Compile Include="Introspection\IntrospectionService.cs" />
+    <Compile Include="Introspection\TableSourceColumnInfo.cs" />
+    <Compile Include="Introspection\TableSourceForeignKeyInfo.cs" />
+    <Compile Include="Introspection\TableSourceInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Projects\DatabaseAbstractionLayer\Properties\CommonAssemblyInfo.cs">
+		<Link>Properties\CommonAssemblyInfo.cs</Link>
+	</Compile>
+    <Compile Include="DatabaseServices.cs" />
+    <Compile Include="ProviderProperties.cs" />
+    <Compile Include="Transaction\TransactionService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Projects\DatabaseAbstractionLayer\DatabaseAbstractionLayer.csproj">
+      <Project>{e451fec9-2b6b-45a2-8ab9-57196f4557e8}</Project>
+      <Name>DatabaseAbstractionLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(ProjectDir)..\SampleDatabaseProvider.Tests\SampleDatabaseProvider.Tests.config" "$(ProjectDir)..\Libraries\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

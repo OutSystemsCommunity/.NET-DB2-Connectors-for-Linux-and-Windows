@@ -1,0 +1,17 @@
+C:\Projects\OutSystems\DatabaseSDK-With-iDB2-Sample\.NET\Libraries\DatabaseAbstractionLayer.csprojAssemblyReference.cache
+C:\Projects\OutSystems\DatabaseSDK-With-iDB2-Sample\.NET\Libraries\DatabaseAbstractionLayer.csproj.CoreCompileInputs.cache
+C:\Projects\OutSystems\DatabaseSDK-With-iDB2-Sample\.NET\Libraries\DatabaseAbstractionLayer.csproj.CopyComplete
+C:\Projects\OutSystems\DatabaseSDK-With-iDB2-Sample\.NET\Libraries\OutSystems.HubEdition.DatabaseAbstractionLayer.dll
+C:\Projects\OutSystems\DatabaseSDK-With-iDB2-Sample\.NET\Libraries\OutSystems.HubEdition.DatabaseAbstractionLayer.XML
+C:\Projects\OutSystems\DatabaseSDK-With-iDB2-Sample\.NET\Libraries\OutSystems.HubEdition.DatabaseAbstractionLayer.pdb
+[path]\.NET\Libraries\DatabaseAbstractionLayer.csproj.CoreCompileInputs.cache
+[path]\.NET\Libraries\OutSystems.HubEdition.DatabaseAbstractionLayer.dll
+[path]\.NET\Libraries\OutSystems.HubEdition.DatabaseAbstractionLayer.XML
+[path]\.NET\Libraries\OutSystems.HubEdition.DatabaseAbstractionLayer.pdb
+C:\Projects\IBM Data Adapter\.NET\Libraries\DatabaseAbstractionLayer.csprojResolveAssemblyReference.cache
+C:\Projects\IBM Data Adapter\.NET\Libraries\OutSystems.HubEdition.DatabaseAbstractionLayer.dll
+C:\Projects\IBM Data Adapter\.NET\Libraries\OutSystems.HubEdition.DatabaseAbstractionLayer.XML
+C:\Projects\IBM Data Adapter\.NET\Libraries\OutSystems.HubEdition.DatabaseAbstractionLayer.pdb
+C:\Projects\IBM Data Adapter\.NET LUW\Libraries\OutSystems.HubEdition.DatabaseAbstractionLayer.dll
+C:\Projects\IBM Data Adapter\.NET LUW\Libraries\OutSystems.HubEdition.DatabaseAbstractionLayer.XML
+C:\Projects\IBM Data Adapter\.NET LUW\Libraries\OutSystems.HubEdition.DatabaseAbstractionLayer.pdb
